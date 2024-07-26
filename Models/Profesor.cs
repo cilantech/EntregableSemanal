@@ -46,4 +46,6 @@ public class Profesor : Persona
         return $"Profesor: {Nombre} {Apellido} - Documento: {NumeroDocumento} - Email: {Email} - Telefono: {Telefono} - Asignatura: {Asignatura} - Salario: {Salario} - Fecha Contratación: {FechaContratacion:dd/MM/yyyy} - Cursos: {string.Join(", ", Cursos)}";
     }
 
+   
+
 }

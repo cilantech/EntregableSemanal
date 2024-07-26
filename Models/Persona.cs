@@ -33,6 +33,7 @@ public class Persona
 
     public virtual void MostrarDetalles()
     {
+        Console.WriteLine("----------------------------------------------------------------");
         Console.WriteLine($"Detalles de:{Nombre}-------{Id} ");
         Console.WriteLine("----------------------------------------------------------------");
         Console.WriteLine($"Id: {Id}");
