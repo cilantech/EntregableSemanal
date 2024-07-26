@@ -7,34 +7,40 @@ namespace EntregableSemanal.Models;
 
 public class Persona
 {
-    public Guid Id { get; set; }
-    public string NombreEstudiante { get; set; }
+    protected Guid Id { get; set; }
+    protected string Nombre { get; set; }
+    protected string Apellido { get; set; }
 
-    public string ApellidoEstudiante { get; set; }
+    protected string TipoDocumento { get; set; }
 
-    public string TipoDocumento { get; set; }
+    protected int NumeroDocumento { get; set; }
 
-    public int NumeroDocumento { get; set; }
+    protected string Email { get; set; }
 
-    public string Email { get; set; }
-
-    public string Telefono { get; set; }
+    protected string Telefono { get; set; }
 
 
-    public void MostrarDetalles()
-    {
-        Console.WriteLine("viendo detalles de ");
-    }
-
-    public Persona(string nombreEstudiante,string apellidoEstudiante,string tipoDocumento, int numeroDocumento,string email,string telefono)
+    public Persona(string nombre, string apellido, string tipoDocumento, int numeroDocumento, string email, string telefono)
     {
 
-        NombreEstudiante = nombreEstudiante;
-        ApellidoEstudiante = apellidoEstudiante;
+        Nombre = nombre;
+        Apellido = apellido;
         TipoDocumento = tipoDocumento;
         NumeroDocumento = numeroDocumento;
         Email = email;
         Telefono = telefono;
+    }
+
+    public virtual void MostrarDetalles()
+    {
+        Console.WriteLine($"viendo detalles de : ");
+        Console.WriteLine(Nombre);
+        Console.WriteLine(Apellido);
+        Console.WriteLine(TipoDocumento);
+        Console.WriteLine(NumeroDocumento);
+        Console.WriteLine(Email);
+        Console.WriteLine(Telefono);
+
     }
 
 

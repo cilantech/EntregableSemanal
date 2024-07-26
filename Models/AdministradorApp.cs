@@ -5,32 +5,48 @@ using System.Threading.Tasks;
 
 namespace EntregableSemanal.Models;
 
-public class AdministradorApp
+public static class AdministradorApp
 {
-    public List<Estudiante> Estudiantes { get; set; }
-    public List<Profesor> Profesores { get; set; }
+    public static List<Estudiante>? Estudiantes { get; set; } = new List<Estudiante>();
+    public static List<Profesor>? Profesores { get; set; } = new List<Profesor>();
 
-    public void AgregarEntregable(List<Estudiante> estudiantes)
+    public static void AgregarEstudiantes(List<Estudiante> estudiantes)
     {
         // var nota = new List<calificacion>(4500.35);
 
         // Calificaciones.Add(nota);
     }
 
-    public void AgregarProfesor(List<Profesor> Profesores)
+    public static void AgregarProfesor(List<Profesor> Profesores)
     {
         // var nota = new List<calificacion>(4500.35);
 
         // Calificaciones.Add(nota);
     }
 
-    public void MostrarEstudiantes()
+    public static void MostrarEstudiantes()
+    {
+
+        
+        Console.WriteLine("viendo detalles de ");
+
+        foreach (var estudiante in Estudiantes)
+        {
+
+            estudiante.MostrarDetalles();
+            // Console.WriteLine(estudiante.ToString());
+        }
+    }
+
+    public static void MostrarProfesores()
     {
         Console.WriteLine("viendo detalles de ");
     }
 
-    public void MostrarProfesores()
+    public static void MostrarMenu()
     {
         Console.WriteLine("viendo detalles de ");
     }
+
+  
 }
