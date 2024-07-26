@@ -22,7 +22,7 @@ public class Persona
 
     public Persona(string nombre, string apellido, string tipoDocumento, int numeroDocumento, string email, string telefono)
     {
-
+        Id = new Guid();
         Nombre = nombre;
         Apellido = apellido;
         TipoDocumento = tipoDocumento;
@@ -34,6 +34,7 @@ public class Persona
     public virtual void MostrarDetalles()
     {
         Console.WriteLine($"viendo detalles de : ");
+        Console.WriteLine(Id);
         Console.WriteLine(Nombre);
         Console.WriteLine(Apellido);
         Console.WriteLine(TipoDocumento);
