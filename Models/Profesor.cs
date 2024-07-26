@@ -15,7 +15,6 @@ public class Profesor : Persona
     public DateOnly FechaContratacion { get; set; }
     public List<string>? Cursos { get; set; }
 
-
     public Profesor(string nombre,string apellido,string tipoDocumento, int numeroDocumento,string email,string telefono,string asignatura, double salario,DateOnly fechaContratacion,List<string> cursos): base(nombre,apellido,tipoDocumento,numeroDocumento,email,telefono)
     {
         Asignatura = asignatura;
@@ -23,7 +22,6 @@ public class Profesor : Persona
         FechaContratacion = fechaContratacion;
         Cursos = cursos;
     }
-
 
     public int CalcularAntiguedad()
     {

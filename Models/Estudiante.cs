@@ -20,12 +20,12 @@ public class Estudiante : Persona
         Calificaciones = calificaciones;
     }
 
-    
+
     public override string ToString()
     {
         return $"Estudiante:{Id} {Nombre} {Apellido}, Documento: {TipoDocumento} {NumeroDocumento}, Email: {Email}, Telefono: {Telefono}, Nombre Acudiente: {NombreAcudiente}, Curso Actual: {CursoActual}, Fecha Nacimiento: {FechaNaciemiento.ToShortDateString()}";
     }
-    
+
     public void AgregarNota(double calificacion)
     {
         Calificaciones.Add(calificacion);
@@ -39,7 +39,7 @@ public class Estudiante : Persona
 
     public void CalcularPromedio()
     {
-    
+
     }
 
 
@@ -54,8 +54,13 @@ public class Estudiante : Persona
     {
 
         base.MostrarDetalles();
-        Console.WriteLine(NombreAcudiente);
-        
+        Console.WriteLine($"Nombre del Acudiente: {NombreAcudiente}");
+        Console.WriteLine($"Curso Actual: {CursoActual}");
+        Console.WriteLine($"Fecha de Nacimiento: {FechaNaciemiento}");
+        Console.WriteLine($"Calificaciones: {Calificaciones}");
+
+
+
         Thread.Sleep(2000);
     }
 

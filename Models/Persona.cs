@@ -33,14 +33,17 @@ public class Persona
 
     public virtual void MostrarDetalles()
     {
-        Console.WriteLine($"viendo detalles de : ");
-        Console.WriteLine(Id);
-        Console.WriteLine(Nombre);
-        Console.WriteLine(Apellido);
-        Console.WriteLine(TipoDocumento);
-        Console.WriteLine(NumeroDocumento);
-        Console.WriteLine(Email);
-        Console.WriteLine(Telefono);
+        Console.WriteLine($"Detalles de:{Nombre}-------{Id} ");
+        Console.WriteLine("----------------------------------------------------------------");
+        Console.WriteLine($"Id: {Id}");
+        Console.WriteLine($"Nombre: {Nombre}");
+        Console.WriteLine($"Apellido: {Apellido}");
+        Console.WriteLine($"Tipo de Documento: {TipoDocumento}");
+        Console.WriteLine($"Número de Documento: {NumeroDocumento}");
+        Console.WriteLine($"Email: {Email}");
+        Console.WriteLine($"Teléfono: {Telefono}");
+
+
 
     }
 

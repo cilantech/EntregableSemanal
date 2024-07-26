@@ -10,6 +10,23 @@ public static class AdministradorApp
     public static List<Estudiante>? Estudiantes { get; set; } = new List<Estudiante>();
     public static List<Profesor>? Profesores { get; set; } = new List<Profesor>();
 
+
+public static bool ValidarDato(string dato)
+{
+    if (string.IsNullOrEmpty(dato))
+    {
+        return false;
+    }
+    if (dato.Trim() != dato)
+    {
+        return false;
+    }
+    return true;
+}
+
+
+
+
     public static void AgregarEstudiantes(Estudiante estudiante)
     {
 
@@ -113,26 +130,76 @@ public static class AdministradorApp
                                 Console.Write("Ingrese Nombre: ");
                                 string NuevoEstudianteNombre = Console.ReadLine();
 
+                                if ( ValidarDato(NuevoEstudianteNombre) == false)
+                                {
+                                    Console.WriteLine("dato erroneo, debes volver a realizar el registro");
+                                    
+
+                                }else{Console.WriteLine("dato correcto puedes continuar");}
+
                                 Console.Write("Apellido del Estudiante: ");
                                 string NuevoEstudianteApellido = Console.ReadLine();
+
+                                if ( ValidarDato(NuevoEstudianteApellido) == false)
+                                {
+                                    Console.WriteLine("dato erroneo, debes volver a realizar el registro");
+                                    
+
+                                }else{Console.WriteLine("dato correcto puedes continuar");}
 
                                 Console.Write("Tipo Documento del Estudiante: ");
                                 string NuevoEstudianteTipoDocumento = Console.ReadLine();
 
+                                if ( ValidarDato(NuevoEstudianteTipoDocumento) == false)
+                                {
+                                    Console.WriteLine("dato erroneo, debes volver a realizar el registro");
+                                    
+
+                                }else{Console.WriteLine("dato correcto puedes continuar");}
+
+                            
                                 Console.Write("Documento del Estudiante: ");
                                 int NuevoEstudianteDocumento = int.Parse(Console.ReadLine());
 
                                 Console.Write("Email del Estudiante: ");
                                 string NuevoEstudianteEmail = Console.ReadLine();
 
+                                if ( ValidarDato(NuevoEstudianteEmail) == false)
+                                {
+                                    Console.WriteLine("dato erroneo, debes volver a realizar el registro");
+                                    
+
+                                }else{Console.WriteLine("dato correcto puedes continuar");}
+
                                 Console.Write("Telefono del Estudiante: ");
                                 String NuevoEstudianteTelefono = Console.ReadLine();
+
+                                if ( ValidarDato(NuevoEstudianteTelefono) == false)
+                                {
+                                    Console.WriteLine("dato erroneo, debes volver a realizar el registro");
+                                    
+
+                                }else{Console.WriteLine("dato correcto puedes continuar");}
 
                                 Console.Write("Nombre Acudiente del Estudiante: ");
                                 string NuevoEstudianteAcudiente = Console.ReadLine();
 
+                                if ( ValidarDato(NuevoEstudianteAcudiente) == false)
+                                {
+                                    Console.WriteLine("dato erroneo, debes volver a realizar el registro");
+                                    
+
+                                }else{Console.WriteLine("dato correcto puedes continuar");}
+
                                 Console.Write("Nombre Curso Actual del Estudiante: ");
                                 string NuevoEstudianteCurso = Console.ReadLine();
+
+                                if ( ValidarDato(NuevoEstudianteCurso) == false)
+                                {
+                                    Console.WriteLine("dato erroneo, debes volver a realizar el registro");
+                                    
+
+                                }else{Console.WriteLine("dato correcto puedes continuar");}
 
                                 Console.Write("Fecha de Nacimiento del Estudiante (YYYY-MM-DD): ");
                                 DateOnly NuevoEstudianteFechaNacimiento = DateOnly.Parse(Console.ReadLine());
@@ -206,16 +273,13 @@ public static class AdministradorApp
                                     case 2:
 
                                         // var profesoresConMasDeUnCurso = Cursos.GroupBy(curso => curso.Profesor).Where(grupo => grupo.Count() > 1).Select(grupo => grupo.Key).ToList();
-
-
-
                                         break;
                                     case 3:
 
 
                                         break;
                                     case 4:
-
+                                        var estudiantesOrdenadosPorApellido = Estudiantes.OrderBy(estudiante => estudiante).ToList();
 
                                         break;
                                     case 5:
@@ -369,117 +433,6 @@ public static class AdministradorApp
 
         } while (!salirTipoUsuario);
 
-
-
-
-        // do
-        // {
-        //     Console.Clear();
-        //     Console.WriteLine("╔═════════════════════════════╗");
-        //     Console.WriteLine("║-----------------------------║");
-        //     Console.WriteLine("║>    Gestor Escuela Riwi    <║");
-        //     Console.WriteLine("║-----------------------------║");
-        //     Console.WriteLine("╟─────────────────────────────╢");
-        //     Console.WriteLine("║--[1]-->    Agregar       <--║");
-        //     Console.WriteLine("║--[2]-->    Editar        <--║");
-        //     Console.WriteLine("║--[3]-->    Eliminar      <--║");
-        //     Console.WriteLine("║--[4]-->    Ver datos     <--║");
-        //     Console.WriteLine("║--[4]-->    Consultar     <--║");
-        //     Console.WriteLine("║--[5]-->    Salir         <--║");
-        //     Console.WriteLine("╚═════════════════════════════╝");
-        //     Console.Write("Seleccione una opción: ");
-
-        //     opcion = int.Parse(Console.ReadLine());
-
-        //     switch (opcion)
-        //     {
-        //         case 1:
-        //             Console.Clear();
-
-        //             Console.WriteLine("Has seleccionado la Opcion  1.");
-
-        //             Estudiantes.Add(new Estudiante("pepe", "ruiz", "CC", 101011771, "pepito@gmail", "310465254", "Adolfo Putin", "10mo", new DateOnly(2000, 10, 05), new List<double> { 4.5, 3.8, 4.2 }));
-        //             Estudiantes.Add(new Estudiante("pepe", "ruiz", "CC", 101011771, "pepito@gmail", "310465254", "Adolfo Putin", "10mo", new DateOnly(2005, 11, 19), new List<double> { 4.5, 3.8, 4.2 }));
-        //             Estudiantes.Add(new Estudiante("Luis", "Hernández", "TI", 303030303, "luis@example.com", "3201234567", "Ana Hernández", "9no", new DateOnly(2002, 12, 20), new List<double> { 3.5, 3.7, 4.1 }));
-        //             Estudiantes.Add(new Estudiante("Luis", "Hernández", "TI", 303030303, "luis@example.com", "3201234567", "Ana Hernández", "9no", new DateOnly(2002, 10, 20), new List<double> { 3.5, 3.7, 4.1 }));
-
-        //             Console.Write("Ingrese Nombre: ");
-        //             string NuevoEstudianteNombre = Console.ReadLine();
-
-        //             Console.Write("Apellido del Estudiante: ");
-        //             string NuevoEstudianteApellido = Console.ReadLine();
-
-        //             Console.Write("Tipo Documento del Estudiante: ");
-        //             string NuevoEstudianteTipoDocumento = Console.ReadLine();
-
-        //             Console.Write("Documento del Estudiante: ");
-        //             int NuevoEstudianteDocumento = int.Parse(Console.ReadLine());
-
-        //             Console.Write("Email del Estudiante: ");
-        //             string NuevoEstudianteEmail = Console.ReadLine();
-
-        //             Console.Write("Telefono del Estudiante: ");
-        //             int NuevoEstudianteTelefono = int.Parse(Console.ReadLine());
-
-        //             Console.Write("Nombre Acudiente del Estudiante: ");
-        //             string NuevoEstudianteAcudiente = Console.ReadLine();
-
-        //             Console.Write("Nombre Curso Actual del Estudiante: ");
-        //             string NuevoEstudianteCurso = Console.ReadLine();
-
-        //             Console.Write("Fecha de Nacimiento del Estudiante (DD/MM/YYYY): ");
-        //             DateOnly NuevoEstudianteFechaNacimiento = DateOnly.Parse(Console.ReadLine());
-
-        //             Console.Write("Notas del Estudiante:");
-        //             int NuevoEstudianteNotas = int.Parse(Console.ReadLine());
-
-
-
-        //             Console.WriteLine($" los datos del estudiante son:");
-
-        //             MostrarEstudiantes();
-
-
-
-
-        //             foreach (var estudiante in AdministradorApp.Estudiantes)
-        //             {
-        //                 Console.WriteLine(estudiante.Nombre);
-        //             }
-
-        //             Console.Write("");
-
-        //             Console.Clear();
-        //             Console.WriteLine("");
-
-        //             break;
-
-        //         case 2:
-        //             Console.Clear();
-
-        //             break;
-        //         case 3:
-
-
-        //             break;
-        //         case 4:
-
-        //             MostrarEstudiantes();
-
-        //             break;
-        //         case 5:
-        //             Console.Clear();
-        //             Console.WriteLine("Cerrando gestor inventario programa.");
-        //             Thread.Sleep(2000);
-        //             salir = true;
-        //             break;
-        //         default:
-        //             Console.WriteLine("*ERROR* Opcion  no válida. Inténtalo de nuevo.");
-        //             break;
-        //     }
-
-        // } while (!salir);
     }
-
 
 }
